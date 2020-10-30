@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/home/gwynnemeeks/.local/share/virtualenvs/levelup-xj49SJa4/bin/python",
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "LevelUp",
+            "database": "/home/gwynnemeeks/workspace/python_projects/levelup/db.sqlite3"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "model": "levelupapi.event",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "day": "2020-11-01",
+            "time": "20:00[00[.0000]]",
+            "location": "Chez Meeks",
+            "game": 1
+        }
+    },
+    {
+        "model": "levelupapi.event",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "day": "2020-10-30",
+            "time": "20:00[00[.0000]]",
+            "location": "Zoom Meeks",
+            "game": 2
+        }
+    }
+]

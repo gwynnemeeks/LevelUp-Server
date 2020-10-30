@@ -1,0 +1,24 @@
+[
+    {
+        "model": "levelupapi.game",
+        "pk": 1,
+        "fields": {
+            "gamer": 1,
+            "number_of_players": 4,
+            "skill_level": 3,
+            "title": "Azul",
+            "gametype": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 2,
+        "fields": {
+            "gamer": 1,
+            "number_of_players": 5,
+            "skill_level": 3,
+            "title": "ViewScream",
+            "gametype": 2
+        }
+    }
+]
