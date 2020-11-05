@@ -29,7 +29,7 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for games"""
     class Meta:
         model = Game
-        fields = ('id', 'title', 'maker', 'number_of_players', 'skill_level')
+        fields = ('id', 'title', 'number_of_players', 'skill_level')
 
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,7 +40,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
         fields = ('id', 'url', 'game', 'gamer',
-                  'description', 'date', 'time', 'joined')
+                  'day', 'time', 'joined')
 
 
 class Events(ViewSet):
@@ -55,8 +55,7 @@ class Events(ViewSet):
 
         event = Event()
         event.time = request.data["time"]
-        event.date = request.data["date"]
-        event.description = request.data["description"]
+        event.day = request.data["day"]
         event.gamer = gamer
 
         game = Game.objects.get(pk=request.data["gameId"])
@@ -89,8 +88,7 @@ class Events(ViewSet):
         gamer = Gamer.objects.get(user=request.auth.user)
 
         event = Event.objects.get(pk=pk)
-        event.description = request.data["description"]
-        event.date = request.data["date"]
+        event.day = request.data["day"]
         event.time = request.data["time"]
         event.gamer = gamer
 
