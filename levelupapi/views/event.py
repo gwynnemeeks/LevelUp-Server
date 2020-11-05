@@ -7,7 +7,7 @@ from rest_framework.decorators import action
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
-from levelupapi.models import Game, Event, Gamer, EventGamers
+from levelupapi.models import Game, Event, Gamer, EventGamer
 
 
 class EventUserSerializer(serializers.ModelSerializer):
@@ -129,9 +129,9 @@ class Events(ViewSet):
             event.joined = None
 
             try:
-                EventGamers.objects.get(event=event, gamer=gamer)
+                EventGamer.objects.get(event=event, gamer=gamer)
                 event.joined = True
-            except EventGamers.DoesNotExist:
+            except EventGamer.DoesNotExist:
                 event.joined = False
 
         # Support filtering events by game
@@ -152,15 +152,15 @@ class Events(ViewSet):
             gamer = Gamer.objects.get(user=request.auth.user)
 
             try:
-                registration = EventGamers.objects.get(
+                registration = EventGamer.objects.get(
                     event=event, gamer=gamer)
 
                 return Response(
                     {'message': 'Gamer already signed up this event.'},
                     status=status.HTTP_422_UNPROCESSABLE_ENTITY
                 )
-            except EventGamers.DoesNotExist:
-                registration = EventGamers()
+            except EventGamer.DoesNotExist:
+                registration = EventGamer()
                 registration.event = event
                 registration.gamer = gamer
                 registration.save()
@@ -179,12 +179,12 @@ class Events(ViewSet):
             gamer = Gamer.objects.get(user=request.auth.user)
 
             try:
-                registration = EventGamers.objects.get(
+                registration = EventGamer.objects.get(
                     event=event, gamer=gamer)
                 registration.delete()
                 return Response({}, status=status.HTTP_204_NO_CONTENT)
 
-            except EventGamers.DoesNotExist:
+            except EventGamer.DoesNotExist:
                 return Response(
                     {'message': 'Not currently registered for event.'},
                     status=status.HTTP_404_NOT_FOUND
