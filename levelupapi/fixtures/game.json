@@ -4,7 +4,6 @@
         "pk": 1,
         "fields": {
             "title": "Welcome To",
-            "maker": "Benoit Turpin",
             "gamer": 1,
             "gametype": 1,
             "number_of_players": 4,
@@ -16,7 +15,6 @@
         "pk": 2,
         "fields": {
             "title": "Settlers of Catan",
-            "maker": "Klaus Teuber",
             "gamer": 1,
             "gametype": 1,
             "number_of_players": 4,
@@ -28,7 +26,6 @@
         "pk": 3,
         "fields": {
             "title": "Dungeons & Dragons",
-            "maker": "Wizards of the Coast",
             "gamer": 1,
             "gametype": 2,
             "number_of_players": 5,
