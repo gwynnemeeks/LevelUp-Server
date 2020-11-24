@@ -18,7 +18,6 @@ def usergame_list(request):
                 SELECT
                     g.id,
                     g.title,
-                    g.maker,
                     g.gametype_id,
                     g.number_of_players,
                     g.skill_level,
@@ -45,7 +44,6 @@ def usergame_list(request):
             #             {
             #                 "id": 1,
             #                 "title": "Foo",
-            #                 "maker": "Bar Games",
             #                 "skill_level": 3,
             #                 "number_of_players": 4,
             #                 "gametype_id": 2
@@ -60,7 +58,6 @@ def usergame_list(request):
                 # Crete a Game instance and set its properties
                 game = Game()
                 game.title = row["title"]
-                game.maker = row["maker"]
                 game.skill_level = row["skill_level"]
                 game.number_of_players = row["number_of_players"]
                 game.gametype_id = row["gametype_id"]
