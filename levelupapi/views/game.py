@@ -68,7 +68,7 @@ class Games(ViewSet):
             serializer = GameSerializer(game, context={'request': request})
             return Response(serializer.data)
         except Exception as ex:
-            return HttpResponseServerError(ex)
+            return HttpResponseServerError(ex, status=status.HTTP_404_NOT_FOUND)
 
     def update(self, request, pk=None):
         """Handle PUT requests for a game
