@@ -26,6 +26,7 @@ router.register(r'events', Events, 'event')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('', include('levelupreports.urls')),
     path('register', register_user),
     path('login', login_user),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
