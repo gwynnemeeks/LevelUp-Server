@@ -81,7 +81,7 @@ def userevent_list(request):
         list_of_users_with_events = events_by_user.values()
 
         # Specify the Django template and provide data context
-        template = 'users/lost_with_events.html'
+        template = 'users/list_with_events.html'
         context = {
             'userevent_list': list_of_users_with_events
         }
